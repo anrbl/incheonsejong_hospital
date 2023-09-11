@@ -1,0 +1,467 @@
+.main_visual {
+    padding: 24px 0 0 0;
+    position: relative;
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 16px;
+        margin: 0 auto 24px auto;
+        max-width: 1440px;
+    }
+
+    .main_slide {
+        border-radius: 12px;
+        overflow: hidden;
+
+        .itm {
+            position: relative;
+            height: 450px;
+
+
+            &.itm01 {
+                background: url(../images/main_visual01.jpg) no-repeat center 20%/cover;
+
+                .slogan {
+                    top: 40px;
+                    transform: translate(0, 0);
+                }
+            }
+
+            &.itm02 {
+                background: url(../images/main_visual02.jpg) no-repeat 70% center/cover;
+            }
+
+            &.itm03 {
+                background: url(../images/main_visual03.jpg) no-repeat center 40%/cover;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0 0 0 0;
+                    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+                }
+
+                .slogan {
+                    right: auto;
+                    left: 40px;
+                    text-align: left;
+                }
+            }
+
+            &.itm04 {
+                background: url(../images/main_visual04.jpg) no-repeat center 60%/cover;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0 0 0 0;
+                background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+            }
+
+            .slogan {
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                right: 32px;
+                text-align: right;
+                color: $c-w;
+                text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+                strong {
+                    display: block;
+                    font-size: 56px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    margin: 0 0 16px 0;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    color: $c-wb;
+                }
+
+                span {
+                    display: inline-block;
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+
+            }
+
+        }
+
+        .slick-dots {
+            position: absolute;
+            bottom: 24px;
+            right: 34px;
+
+            display: flex !important;
+            gap: 6px;
+
+            li {
+                button {
+                    border: none;
+                    outline: none;
+                    font-size: 0;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                }
+
+                &.slick-active {
+                    button {
+                        background: $c-point;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .hospital_reservation {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 40px 30px 32px 30px;
+        background: $c-wb;
+        border-radius: 12px;
+        border: 1px solid $c-line;
+
+        legend {
+            display: block;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+
+        .txt {
+            font-size: 14px;
+            line-height: 18px;
+            color: $c-6;
+            margin: 0 0 32px 0;
+        }
+
+        .num {
+            display: flex;
+            gap: 4px;
+            margin: 0 0 16px 0;
+
+            input {
+                border: 1px solid $c-line;
+                outline: none;
+                padding: 8px 24px 8px 12px;
+                color: $c-2;
+                border-radius: 4px;
+
+                &::placeholder {
+                    color: $c-9;
+                }
+            }
+        }
+
+        button {
+            border: 1px solid $c-line;
+            outline: none;
+            padding: 0 12px;
+            line-height: 1;
+            border-radius: 4px;
+            background: $c-main;
+            color: $c-line;
+            cursor: pointer;
+        }
+
+        .agree {
+            input {
+                vertical-align: -2px;
+            }
+
+            label {
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            span {
+                a {
+                    display: inline-block;
+                    font-size: 14px;
+                    color: $c-sub;
+                    line-height: 20px;
+                    text-decoration: underline;
+                    text-align: right;
+                    text-indent: 4px;
+
+                }
+            }
+        }
+
+        .reservation_link {
+            a {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                padding: 16px 24px;
+                color: $c-6;
+                background: $c-w;
+                border: 1px solid $c-line;
+
+                &::after {
+                    content: "\e409";
+                    font-family: "material symbols outlined";
+                    vertical-align: -2px;
+                    color: $c-main;
+                }
+            }
+
+            li {
+                &:first-child {
+                    margin: 0 0 4px 0;
+                }
+            }
+        }
+    }
+
+    .notice {
+        position: relative;
+        display: flex;
+        width: 100%;
+
+        .notice_wrap {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 4px 16px;
+            border: 1px solid $c-line;
+            background: $c-wb;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: $c-main;
+        }
+
+        .notice_slide {
+            width: 80%;
+            background: $c-w;
+            padding: 9px 16px 8px 16px;
+            border-radius: 4px;
+            border: 1px solid $c-line;
+
+            a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            p {
+                font-weight: 500;
+            }
+
+            span {
+                display: inline-block;
+                color: $c-6;
+                font-weight: 300;
+            }
+        }
+
+        .notice_arrow {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            span {
+                color: $c-9;
+                background: $c-w;
+                padding: 4px;
+                border: 1px solid $c-line;
+                user-select: none;
+                cursor: pointer;
+            }
+
+            .prev {
+                span {
+                    border-bottom: none;
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width:768px) {
+
+    .main_visual {
+        padding: 0;
+
+        .content {
+            display: block;
+            margin: 0 0 16px 0;
+        }
+
+        .main_slide {
+            border-radius: 0 0 0 56px;
+            margin: 0 0 16px 0;
+
+
+            .itm {
+                height: 280px;
+
+
+                &.itm01 {
+                    background: url(../images/main_visual01.jpg) no-repeat 90% center/cover;
+
+                    .slogan {
+                        top: 50%;
+                        transform: translate(0, -50%);
+                    }
+                }
+
+                &.itm02 {
+                    background: url(../images/main_visual02.jpg) no-repeat 90% center/cover;
+                }
+
+                &.itm03 {
+                    background: url(../images/main_visual03.jpg) no-repeat 295% center/cover;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: auto;
+                        right: 0;
+                        bottom: 0;
+                        z-index: -1;
+                        width: 75%;
+                        background: $c-main;
+                    }
+
+                    .slogan {
+                        left: auto;
+                        right: 24px;
+                        transform: translate(0, -50%);
+                        text-align: right;
+                    }
+                }
+
+                &.itm04 {
+                    background: url(../images/main_visual04.jpg) no-repeat 150% center/cover;
+                }
+
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: auto;
+                    right: 0;
+                    bottom: 0;
+                    z-index: -1;
+                    width: 75%;
+                    background: $c-main;
+                }
+
+                .slogan {
+                    text-align: right;
+                    right: 24px;
+                    z-index: 2;
+                    transform: translate(0, -50%);
+                    width: calc(70% - 36px);
+
+                    strong {
+                        font-size: 40px;
+                    }
+
+                    p {
+                        font-size: 10px;
+                        margin: 0 0 8px 0;
+                        letter-spacing: 0.5px;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        line-height: 18px;
+                    }
+                }
+            }
+
+
+        }
+
+        .slick-dots {
+            right: 26px;
+        }
+
+        .hospital_reservation {
+            margin: 0 15px;
+            padding: 30px 18px 18px 18px;
+            border-radius: 4px;
+
+            form {
+                margin: 0 0 32px 0;
+            }
+
+            legend {
+                font-size: 24px;
+            }
+
+            .num {
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .notice {
+            .notice_wrap {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 8px;
+                padding: 16px 14px 14px 14px;
+                border-radius: 4px;
+                border: 1px solid $c-line;
+            }
+
+            h3 {
+                text-indent: 4px;
+            }
+
+            .notice_slide {
+                order: 2;
+                width: 100%;
+                padding: 9px 12px 8px 12px;
+
+                p {
+
+                    width: 180px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    word-break: break-all;
+                }
+
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            .more {
+                span {
+                    font-size: 14px;
+                    color: $c-9;
+                }
+            }
+
+            .notice_arrow {
+                position: absolute;
+                top: -10px;
+                right: 44px;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

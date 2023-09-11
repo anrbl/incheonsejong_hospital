@@ -1,0 +1,130 @@
+.quick_menu {
+    position: sticky;
+    bottom: 0;
+    z-index: 999;
+    background: $c-3;
+
+    .inner {
+        display: flex;
+        align-items: center;
+
+        li {
+            position: relative;
+            flex: 1;
+            text-align: center;
+
+            &:not(:first-child) {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 1px;
+                    height: 100%;
+                    background: $c-4;
+                }
+            }
+
+            a {
+                display: block;
+                padding: 20px;
+                color: $c-gray;
+            }
+
+            span {
+                display: block;
+                padding: 20px;
+                font-size: 18px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                color: $c-w;
+                background: $c-2;
+                user-select: none;
+            }
+
+        }
+
+        .to_top {
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+
+            span {
+                padding: 0;
+                width: 58px;
+                height: 58px;
+
+                font-size: 15px;
+                line-height: 58px;
+                letter-spacing: 0px;
+                text-align: center;
+
+                background: $c-main;
+
+                user-select: none;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+}
+
+@media (max-width:768px) {
+    .quick_menu {
+        background: $c-4;
+
+        .inner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0;
+            gap: 1px;
+
+            li {
+                &:nth-child(1) {
+                    grid-row: 1 / 1;
+                }
+
+                &:nth-child(2) {
+                    grid-template-rows: 2 / 3;
+                }
+
+                &:not(:first-child) {
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                a {
+                    display: block;
+                    padding: 16px;
+                    font-size: 14px;
+                    color: $c-gray;
+                    background: $c-3;
+                }
+
+                span {
+                    display: block;
+                    padding: 16px;
+                    font-size: 14px;
+                    color: $c-gray;
+                }
+            }
+
+            .to_top {
+                top: -41px;
+
+                span {
+                    width: 42px;
+                    height: 42px;
+                    font-size: 12px;
+                    line-height: 38px;
+                    color: $c-w;
+                }
+            }
+        }
+    }
+}
