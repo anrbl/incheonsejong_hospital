@@ -14,6 +14,14 @@ $(function () {
         $('.skip').removeClass('on');
     })
 
+
+    $('.gnb>ul>li').on('mouseenter ', function () {
+        $('.first').addClass('M_on');
+    })
+    $('.gnb>ul>li>a').on('mouseleave', function () {
+        $('.first').removeClass('M_on');
+    })
+
     //메인 비주얼 슬라이드 - 페이드 모드 (main>seciton.main_visual>.main_slide)
     $('.main_slide').slick({
         arrows: false,
@@ -43,7 +51,7 @@ $(function () {
 
         let idx = $(this).index();
         $('.doc_title li').eq(idx).addClass('on').siblings().removeClass('on');
-        $('.doc_center>li').eq(idx).addClass('on').siblings().removeClass();
+        $('.doc_center>li').eq(idx).addClass('on').siblings().removeClass('on');
     });
 
     //패밀리사이트(footer>ft>foot_family)
